@@ -2,7 +2,6 @@
 
 namespace App\Model;
 
-use Hyperf\DbConnection\Model\Model;
 use HyperfExt\Auth\Authenticatable;
 use HyperfExt\Auth\Contracts\AuthenticatableInterface;
 use HyperfExt\Jwt\Contracts\JwtSubjectInterface;

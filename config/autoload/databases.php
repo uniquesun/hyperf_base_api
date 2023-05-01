@@ -21,7 +21,7 @@ return [
         'collation' => env('DB_COLLATION', 'utf8_unicode_ci'),
         'prefix' => env('DB_PREFIX', ''),
         'pool' => [
-            'min_connections' => 1,
+            'min_connections' => 2,
             'max_connections' => 10,
             'connect_timeout' => 10.0,
             'wait_timeout' => 3.0,
@@ -35,5 +35,14 @@ return [
                 'inheritance' => 'Model',
             ],
         ],
+        'cache' => [
+            'handler' => \Hyperf\ModelCache\Handler\RedisHandler::class,
+            'cache_key' => 'mc:%s:m:%s:%s:%s',
+            'prefix' => 'default',
+            'ttl' => 3600 * 24,
+            'empty_model_ttl' => 3600,
+            'load_script' => true,
+            'use_default_value' => false,
+        ]
     ],
 ];

@@ -1,16 +1,21 @@
-# 基于hyperf的API
+# blog
 
-每次新开一个项目都要重新弄一遍最基础的注册登录，token，统一响应与异常的格式，很烦人
-，所以就弄了这个最基础的。以后
-
-# 操作
 ```shell
-# 生成 jwt key
-php bin/hyperf.php gen:jwt-secret
+# adminUser
+id name password ...
 
-# env 设置
-JWT_BLACKLIST_GRACE_PERIOD=5  #设置宽限期（以秒为单位）以防止并发请求失败。
-JWT_TTL=3600 #指定令牌有效的时长（以秒为单位）。默认为 1 小时
+# category
+id  name image  parent_id is_directory level path
 
+# tag
+id  name
+
+# article 
+id subtitle title slug image content created_at 
+id articel_id  category_id
+id articel_id  tag_id
+
+# comment
+id articel_id content name email created_at
 
 ```

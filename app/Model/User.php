@@ -2,11 +2,9 @@
 
 namespace App\Model;
 
-use Hyperf\DbConnection\Model\Model;
 use HyperfExt\Auth\Contracts\AuthenticatableInterface;
 use HyperfExt\Jwt\Contracts\JwtSubjectInterface;
 use HyperfExt\Auth\Authenticatable;
-use JetBrains\PhpStorm\ArrayShape;
 
 class User extends Model implements AuthenticatableInterface, JwtSubjectInterface
 {
